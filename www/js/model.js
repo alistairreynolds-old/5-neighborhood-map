@@ -1,6 +1,6 @@
 var model = {
 	mapOptions: {
-		center: { lat: -34.397, lng: 150.644},
+		center: { lat: 51.7322551, lng: -2.232634},
 		zoom: 18
 	},
 }
