@@ -1,12 +1,15 @@
-var view = {
 
+var map = new google.maps.Map(document.getElementById('map-canvas'), controller.getMapOptions());
+
+var view = {
+	self: this,
+	
 	init: function(){
 		this.loadMap();
 		this.renderLocations();
 	},
 
 	loadMap: function(){
-		this.map = new google.maps.Map(document.getElementById('map-canvas'), controller.getMapOptions() );
 	},
 
 	// Using for testing it exists
@@ -23,12 +26,12 @@ var view = {
 
 			var marker = new google.maps.Marker({
 				position: new google.maps.LatLng(locations[i].lat, locations[i].lng),
-				map: this.map,
+				map: map,
 				title: locations[i].name
 			});
 
 			google.maps.event.addListener(marker, 'click', function(){
-				infoWindow.open(this.map, marker);
+				infoWindow.open(map, marker);
 			});
 		}
 	}
