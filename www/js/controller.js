@@ -1,12 +1,4 @@
 var controller = {
-  
-	getKOLocaitions: function(){
-    	var that = {};
-	    that.Latitude=ko.observable();
-    	that.Longitude=ko.observable();
-    	return that;
-	},
-
 	getMapOptions: function(){
 		return model.mapOptions;
 	},
