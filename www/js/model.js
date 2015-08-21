@@ -27,6 +27,27 @@ var model = {
 				'webUrl': 'https://www.facebook.com/pages/The-Kings-Head/161432770539038',
 				'web': 'The King\'s Head Facebook'
 			},			
+			{
+				'name': 'Stroud Train Station', 
+				'lat': '51.7445949', 
+				'lng':  '-2.2193167',
+				'contentString': 
+					'Stroud railway station is a railway station that serves the town of Stroud in Gloucestershire, England.<br />' + 
+					'Stroud railway station was designed by Isambard Kingdom Brunel.',
+				'webUrl': 'http://www.nationalrail.co.uk/stations/std/details.aspx',
+				'web': 'Stroud Train Station website'
+			},					
+			{
+				'name': 'Stroud Farmer\'s Market', 
+				'lat': '51.7453619', 
+				'lng':  '-2.2162381',
+				'contentString': 
+					'Stroud Farmers’ Market is multi award-winning and is well known as one of the biggest, busiest and most popular farmers\' market in the UK.<br />' + 
+					'The market was awarded Best Farmers\' Market in the UK for 2013 for a second time by FARMA.',
+				'img': 'http://79.170.44.140/fresh-n-local.co.uk/wp-content/uploads/2014/10/stroud-farmers-market-insert1.jpg',
+				'webUrl': 'http://fresh-n-local.co.uk/trader/stroud',
+				'web': 'Stroud Farmer\'s Market website'
+			},		
 		]
 	}
 }
