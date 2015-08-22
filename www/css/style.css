@@ -2,3 +2,11 @@ html, body, #map-canvas{
 	height: 100%;
 	margin: 0px; 
 }
+#info-overlay{
+	position:fixed;
+	top:0;
+	right:0;
+	height:100%;
+	background:#fff;
+	width:30vw;
+}

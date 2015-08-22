@@ -10,3 +10,5 @@ TODO
 * Comment
 * Add Loading
 * Add error returns
+* Add up to 5 locations
+* Convert to KO variables

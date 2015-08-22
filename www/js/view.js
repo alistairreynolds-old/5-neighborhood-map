@@ -1,15 +1,8 @@
 var view = {
-<<<<<<< HEAD
 
-||||||| 689e84a... Added more points
-	
-=======
-	self: this,
-	
->>>>>>> parent of 689e84a... Added more points
 	init: function(){
 		this.loadMap();
-		this.renderLocations();
+		//this.renderLocations();
 	},
 
 	loadMap: function(){
@@ -24,7 +17,6 @@ var view = {
 	renderLocations: function(){
 		var locations = controller.getLocations();
 		for(i = 0; i < locations.length; i ++){
-<<<<<<< HEAD
 			var infoWindow = new google.maps.InfoWindow({
 				content: controller.parseLocationWindowContent(locations[i])
 			});
@@ -38,10 +30,8 @@ var view = {
 			google.maps.event.addListener(marker, 'click', function(){
 				infoWindow.open(this.map, marker);
 			});
-||||||| 689e84a... Added more points
 			location = locations[i];
 			this.createMarker(location);
-=======
 			var infoWindow = new google.maps.InfoWindow({
 				content: controller.parseLocationWindowContent(locations[i])
 			});
@@ -55,7 +45,7 @@ var view = {
 			google.maps.event.addListener(marker, 'click', function(){
 				infoWindow.open(map, marker);
 			});
->>>>>>> parent of 689e84a... Added more points
 		}
 	}
+
 };
