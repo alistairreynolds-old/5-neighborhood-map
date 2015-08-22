@@ -1,3 +1,48 @@
+function point(name, lat, long) {
+    this.name = name;
+    this.lat = ko.observable(lat);
+    this.long = ko.observable(long);
+
+    var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(lat, long),
+        title: name,
+        map: map,
+        draggable: true
+    });
+
+    //if you need the poition while dragging
+    google.maps.event.addListener(marker, 'click', function() {
+    	console.log(this);
+        var pos = marker.getPosition();
+        this.lat(pos.lat());
+        this.long(pos.lng());
+    }.bind(this));
+
+    //if you just need to update it when the user is done dragging
+    google.maps.event.addListener(marker, 'dragend', function() {
+        var pos = marker.getPosition();
+        this.lat(pos.lat());
+        this.long(pos.lng());
+    }.bind(this));
+}
+
+var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 5,
+    center: new google.maps.LatLng(55, 11),
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+});
+
+var viewModel = {
+    points: ko.observableArray([
+        new point('Test1', 55, 11),
+        new point('Test2', 56, 12),
+        new point('Test3', 57, 13)]);
+
+};
+
+ko.applyBindings(viewModel);
+
+/*
 var controller = {
 	getMapOptions: function(){
 		return model.mapOptions;
@@ -42,3 +87,4 @@ var controller = {
 
 	//}
 }
+*/
