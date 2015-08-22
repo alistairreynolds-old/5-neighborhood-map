@@ -9,12 +9,16 @@
   <div id="map"></div> 
   <div id="points" data-bind="template: { name: 'pointsTmpl', foreach: points }"></div>
   <script id="pointsTmpl" type="text/html">
-      <p data-bind="click: $parent.setSelected">
-          <!-- ko if: selected -->
-              Name: <span data-bind="text: name"></span>;
-              Lat: <span data-bind="text: lat"></span>;
-          <!-- /ko -->
-      </p>
+      <div>
+          <div data-bind="if: selected">
+              <h2 data-bind="text: name"></h2>
+              <div data-bind="html: content"></div>
+              <img width="90%" data-bind="attr: {src: img, alt: name}" />
+              <p data-bind="if: web">
+                  <a target="_blank" data-bind="attr: {href: webUrl, alt: web}"><span data-bind="text: web"></span></a>
+              </p>
+          </div>
+      </div>
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
   	<script src="js/lib/jquery-1.11.3.min.js"></script>

@@ -1,7 +1,11 @@
-point = function(name, lat, long) {
+point = function(name, lat, long, content, img, webUrl, web) {
     this.name = name;
     this.lat = ko.observable(lat);
     this.long = ko.observable(long);
+    this.content = ko.observable(content);
+    this.img = ko.observable(img);
+    this.webUrl = ko.observable(webUrl);
+    this.web = ko.observable(web);
     this.selected = ko.observable(false);
 
     var marker = new google.maps.Marker({
@@ -29,7 +33,11 @@ var viewModel = {
 			p = new point(
 	    			model.mapLocations.locations[i].name,
 	    			model.mapLocations.locations[i].lat,
-	    			model.mapLocations.locations[i].lng
+	    			model.mapLocations.locations[i].lng,
+	    			model.mapLocations.locations[i].contentString,
+	    			model.mapLocations.locations[i].img,
+	    			model.mapLocations.locations[i].webUrl,
+	    			model.mapLocations.locations[i].web
 	    		)
 			this.points.push(p);
 		}

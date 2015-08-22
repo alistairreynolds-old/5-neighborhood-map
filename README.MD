@@ -2,7 +2,6 @@ TODO
 
 * Style the info windows better
 * Add search bar
-* Add POI
 * Add POI menu
 * Add streetview next to it showing same coords
 * If viewing portrait style, put map on top and streetview underneart
@@ -10,5 +9,3 @@ TODO
 * Comment
 * Add Loading
 * Add error returns
-* Add up to 5 locations
-* Convert to KO variables

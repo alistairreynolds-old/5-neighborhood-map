@@ -1,6 +1,7 @@
 html, body, #map{
 	height: 100%;
 	margin: 0px; 
+	font-family: 'Helvetica', 'Verdana', sans-serif);
 }
 #points{
 	position:fixed;
@@ -10,5 +11,11 @@ html, body, #map{
 	background:#fff;
 	width:30vw;
 }
-#info-name{
-}
+h2{
+	background: #000055;
+	height:40px;
+	padding:10px 0px 0px 10px;
+	width:100%;
+	font-weight: bolder;
+	color: #fff;
+};
