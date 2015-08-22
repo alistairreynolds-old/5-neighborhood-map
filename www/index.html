@@ -8,9 +8,14 @@
   </head>
   <body>
     <div id="map-canvas">Loading map...</div>
+    <div id="points" data-bind="template: { name: 'pointsTmpl', foreach: points }"></div>
+    <script id="pointsTmpl" type="text/html">
     <div id="info-overlay">
-      <div data-bind="text: name"></div>
+        <p>
+            Name: <span data-bind="text: name"></span>
+        </p>
     </div>
+    </script>    
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
   	<script src="js/lib/jquery-1.11.3.min.js"></script>
   	<script src="js/lib/bootstrap.min.js"></script>

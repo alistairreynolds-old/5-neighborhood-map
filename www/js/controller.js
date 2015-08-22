@@ -18,38 +18,27 @@ var controller = {
 		return html;
 	},
 
+	// credit - http://jsfiddle.net/t9wcC/
 	point: function(name, lat, long) {
-	    this.name = name;
+	    this.name = ko.observable(name);
 	    this.lat = ko.observable(lat);
 	    this.long = ko.observable(long);
-
 	    var marker = new google.maps.Marker({
 	        position: new google.maps.LatLng(lat, long),
 	        title: name,
-	        map: view.map,
-	        draggable: true
+	        map: view.map
 	    });
 
-	    //if you need the poition while dragging
-	    google.maps.event.addListener(marker, 'drag', function() {
-	        var pos = marker.getPosition();
-	        this.lat(pos.lat());
-	        this.long(pos.lng());
-	    }.bind(this));
+		google.maps.event.addListener(marker, 'click', function(){
+        	var pos = marker.getPosition();
+        	this.lat(pos.lat());
+        	this.long(pos.lng());
+        	this.name('asd');
+    	}.bind(this));
 
-	    //if you just need to update it when the user is done dragging
-	    google.maps.event.addListener(marker, 'dragend', function() {
-	        var pos = marker.getPosition();
-	        this.lat(pos.lat());
-	        this.long(pos.lng());
-	    }.bind(this));
 	},	
 
-	getPoints: function(){
-		points: ko.observableArray([
-	        new this.point('The King\'s Head', 51.7558162, -2.2476957),
-	        new this.point('Test2', 56, 12),
-	        new this.point('Test3', 57, 13)]
-		)
-	}
+	//getPoints: function(){
+
+	//}
 }
