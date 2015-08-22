@@ -2,6 +2,7 @@ point = function(name, lat, long) {
     this.name = name;
     this.lat = ko.observable(lat);
     this.long = ko.observable(long);
+    this.selected = ko.observable(false);
 
     var marker = new google.maps.Marker({
         position: new google.maps.LatLng(lat, long),
@@ -10,6 +11,8 @@ point = function(name, lat, long) {
     });
 
     google.maps.event.addListener(marker, 'click', function() {
+    	viewModel.hidePoints();
+    	this.selected(true);
         var pos = marker.getPosition();
         this.lat(pos.lat());
         this.long(pos.lng());
@@ -23,13 +26,12 @@ var viewModel = {
 
     addPoints: function(){
 		for(i=0; i < model.mapLocations.locations.length; i++){
-			location = model.mapLocations.locations[i];
 			p = new point(
-	    			location.name,
-	    			location.lat,
-	    			location.lng
+	    			model.mapLocations.locations[i].name,
+	    			model.mapLocations.locations[i].lat,
+	    			model.mapLocations.locations[i].lng
 	    		)
-			self.points.push(p);
+			this.points.push(p);
 		}
  	},
       
@@ -39,5 +41,11 @@ var viewModel = {
 
     setSelected: function(point){
     	console.log(point);
+    },
+
+    hidePoints: function(){
+    	for(i=0; i < this.points().length; i++){
+			this.points()[i].selected(false);
+		}    	
     }
 };

@@ -10,8 +10,10 @@
   <div id="points" data-bind="template: { name: 'pointsTmpl', foreach: points }"></div>
   <script id="pointsTmpl" type="text/html">
       <p data-bind="click: $parent.setSelected">
-          Name: <span data-bind="text: name"></span>;
-          Lat: <span data-bind="text: lat"></span>;
+          <!-- ko if: selected -->
+              Name: <span data-bind="text: name"></span>;
+              Lat: <span data-bind="text: lat"></span>;
+          <!-- /ko -->
       </p>
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
