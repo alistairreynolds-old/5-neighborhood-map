@@ -42,19 +42,23 @@ var model = {
 			{
 				'name': 'South Mill House', 
 				'lat': '51.7322551', 
-				'lng':  '2.232634',
+				'lng':  '-2.232634',
 				'contentString': 
 					'This is my parent\'s home, where I live when I\'m in the UK.' + 
 					'It\'s a great cottage style house, built in the 1970s, and right next to an allotment',
-				'img': 'http://i.imgur.com/EnT7PBw.png'
+				'img': 'http://i.imgur.com/EnT7PBw.png',
+				'webUrl': '',
+				'web' : ''
 			},						
 			{
-				'name': 'Stourd Congregational Church', 
+				'name': 'Stroud Congregational Church', 
 				'lat': '51.7451224', 
-				'lng':  '2.2174341',
+				'lng':  '-2.2174341',
 				'contentString': 
 					'There are <em>lots</em> of churches in stroud - this is one of them, showing lots of ecclesiastical church-nesses',
-				'img': 'http://i.imgur.com/FoZ5wn0.jpg'
+				'img': 'http://i.imgur.com/FoZ5wn0.jpg',
+				'webUrl': '',
+				'web' : ''
 			},
 		]
 	}

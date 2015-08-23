@@ -1,7 +1,7 @@
 html, body, #map{
 	height: 100%;
 	margin: 0px; 
-	font-family: 'Helvetica', 'Verdana', sans-serif);
+	font-family: "Helvetica", "Verdana", sans-serif;
 }
 #points{
 	position:fixed;
@@ -12,10 +12,17 @@ html, body, #map{
 	width:30vw;
 }
 h2{
+	cursor: pointer;
 	background: #000055;
-	height:40px;
-	padding:10px 0px 0px 10px;
+	padding:10px;
 	width:100%;
 	font-weight: bolder;
 	color: #fff;
-};
+	margin:0;
+}
+#info-content{
+	margin:10px;
+}
+#points{
+	background-color:rgba(255,255,255,0.8);
+}
