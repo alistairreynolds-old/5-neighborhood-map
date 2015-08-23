@@ -1,10 +1,12 @@
-var model = {
-	mapOptions: {
+function Model() {
+	var self = this;
+
+	this.mapOptions = {
 		center: { lat: 51.7322551, lng: -2.232634},
 		zoom: 12
-	},
+	};
 
-	mapLocations: {
+	this.mapLocations = {
 		locations: [
 			{
 				'name': 'King\'s Head', 
@@ -61,5 +63,7 @@ var model = {
 				'web' : ''
 			},
 		]
-	}
+	};
 }
+
+var model = new Model();
