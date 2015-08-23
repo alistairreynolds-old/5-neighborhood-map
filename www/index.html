@@ -10,7 +10,7 @@
     <div id="map">Loading map. Please wait...</div> 
     <div id="points" data-bind="template: { name: 'pointsTmpl', foreach: points }"></div>
     <script id="pointsTmpl" type="text/html">
-      <input type="text" placeholder="Search..." data-bind="event: {onkeyup, function(){filter(this.value)}}" class="search">
+      <input type="text" placeholder="Search..." data-bind="event: {keyup: setFilter}, textInput: filter" class="search">
       <h2 data-bind="text: name, click: setSelectedKO"></h2>         
       <div data-bind="if: selected">
         <div id="info-content">
