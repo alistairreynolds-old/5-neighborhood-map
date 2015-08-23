@@ -50,4 +50,19 @@ var viewModel = {
  		viewModel.hidePoints();    // oddly, self and this don't work here when calling from data-bind click events
 		point.selected(true);
     },
+
+    filterPoints: function(filter){
+    	console.log(filter);
+    }
+
+	/*filteredItems: ko.computed(function() {
+	    var filter = this.filter().toLowerCase();
+	    if (!filter) {
+	        return this.points();
+	    } else {
+	        return ko.utils.arrayFilter(this.points(), function(point) {
+	            return ko.utils.stringStartsWith(point.name().toLowerCase(), filter);
+	        });
+	    }
+	}, this),*/
 };
