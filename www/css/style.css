@@ -4,25 +4,27 @@ html, body, #map{
 	font-family: "Helvetica", "Verdana", sans-serif;
 }
 #points{
-	position:fixed;
-	top:0;
-	right:0;
-	height:100%;
-	background:#fff;
-	width:30vw;
+	position: fixed;
+	top: 0;
+	right: 0;
+	height: 100%;
+	background: #fff;
+	width: 30vw;
+	background-color: rgba(255,255,255,0.8);	
 }
 h2{
 	cursor: pointer;
 	background: #000055;
-	padding:10px;
-	width:100%;
-	font-weight: bolder;
+	padding: 5px 10px;
+	width: 100%;
+	font-weight: bold;
 	color: #fff;
-	margin:0;
+	margin: 0;
+	font-size: 16px;
+}
+#info-content img{
+	padding-top: 10px;
 }
 #info-content{
-	margin:10px;
-}
-#points{
-	background-color:rgba(255,255,255,0.8);
+	margin: 10px;
 }
