@@ -1,3 +1,3 @@
 view.setTimer();
 ko.applyBindings(viewModel);
-viewModel.addPoints();
+this.addPoints();

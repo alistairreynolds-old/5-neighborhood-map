@@ -1,7 +1,12 @@
-var viewModel = {
-	self: this,
+function viewModel(){
 
-	point: function(name, lat, long, content, img, webUrl, web) {
+	var self = this;
+    self.points = ko.observableArray([]);
+    self.filter = ko.observable;
+
+	self.point = function(name, lat, long, content, img, webUrl, web) {
+		
+		var that = this;       //context-ception
 	    this.name = name;
 	    this.lat = ko.observable(lat);
 	    this.long = ko.observable(long);
@@ -11,23 +16,21 @@ var viewModel = {
 	    this.web = ko.observable(web);
 	    this.selected = ko.observable(false);
 
-	    var marker = new google.maps.Marker({
+	    this.marker = new google.maps.Marker({
 	        position: new google.maps.LatLng(lat, long),
 	        title: name,
 	        map: view.map
 	    });
 
-	    google.maps.event.addListener(marker, 'click', function() {
-	    	viewModel.setSelected(this);
-	    	this.selected(true);
-	    }.bind(this));
-	},
+	    google.maps.event.addListener(this.marker, 'click', function() {
+	    	self.hidePoints();
+	    	that.selected(true);
+	    }.bind(self));
+	};
 
-    points: ko.observableArray([]),
-
-    addPoints: function(){
+    self.addPoints = function(){
 		for(i=0; i < model.mapLocations.locations.length; i++){
-			p = new viewModel.point(
+			p = new self.point(
 	    			model.mapLocations.locations[i].name,
 	    			model.mapLocations.locations[i].lat,
 	    			model.mapLocations.locations[i].lng,
@@ -36,24 +39,39 @@ var viewModel = {
 	    			model.mapLocations.locations[i].webUrl,
 	    			model.mapLocations.locations[i].webvi
 	    		)
-			this.points.push(p);
+			self.points.push(p);
 		}
- 	},
+ 	};
 
- 	hidePoints: function(){
-    	for(i=0; i < this.points().length; i++){
-			this.points()[i].selected(false);
+ 	self.hidePoints = function(){
+    	for(i=0; i < self.points().length; i++){
+			self.points()[i].selected(false);
 		}		
- 	},
+ 	};
 
-    setSelected: function(point){
- 		viewModel.hidePoints();    // oddly, self and this don't work here when calling from data-bind click events
-		point.selected(true);
-    },
+    self.setSelected = function(p){
+ 		self.hidePoints(); 
+		self.p.selected(true);
+    };
 
-    filterPoints: function(filter){
-    	console.log(filter);
-    }
+    self.setSelectedKO = function(){
+ 		self.hidePoints(); 
+		this.selected(true);
+    };
+
+	self.filter = function(f) {
+	    //self.currentFilter(f);
+	};
+
+    self.filterPoints = ko.computed(function(){
+        if(!self.filter()) {
+            return this.points(); 
+        } else {
+            return ko.utils.arrayFilter(self.points(), function(point) {
+                return point.name == this.filter();
+            });
+        }
+    });
 
 	/*filteredItems: ko.computed(function() {
 	    var filter = this.filter().toLowerCase();
