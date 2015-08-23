@@ -27,7 +27,7 @@ var viewModel = {
 
     addPoints: function(){
 		for(i=0; i < model.mapLocations.locations.length; i++){
-			p = new viewModel.point(
+			p = new self.point(
 	    			model.mapLocations.locations[i].name,
 	    			model.mapLocations.locations[i].lat,
 	    			model.mapLocations.locations[i].lng,

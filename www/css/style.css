@@ -11,14 +11,18 @@ html, body, #map{
 	background:#fff;
 	width:30vw;
 }
+#points img{
+	padding-top:10px;
+}
 h2{
 	cursor: pointer;
 	background: #000055;
-	padding:10px;
+	padding:5px 10px;
 	width:100%;
-	font-weight: bolder;
+	font-weight: bold;
 	color: #fff;
 	margin:0;
+	font-size:16px;
 }
 #info-content{
 	margin:10px;
