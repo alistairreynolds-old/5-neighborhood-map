@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body>
-    <div id="map">   Loading maps. Please wait...</div> 
+    <div id="map">Loading maps. Please wait...</div> 
     <div id="points" data-bind="template: { name: 'pointsTmpl', foreach: points }"></div>
     <script id="pointsTmpl" type="text/html">
       <h2 data-bind="text: name, click: $parent.setSelected"></h2>         
