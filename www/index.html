@@ -7,10 +7,9 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body>
-    <div id="map">Loading map. Please wait...</div> 
-    <div id="points" data-bind="template: { name: 'pointsTmpl', foreach: points }"></div>
+    <div id="map">Loading map. Please wait...</div>     
+    <div id="points" data-bind="template: { name: 'pointsTmpl', foreach: filteredPoints }"></div>
     <script id="pointsTmpl" type="text/html">
-      <input type="text" placeholder="Search..." data-bind="event: {keyup: setFilter}, textInput: filter" class="search">
       <h2 data-bind="text: name, click: setSelectedKO"></h2>         
       <div data-bind="if: selected">
         <div id="info-content">
@@ -22,9 +21,12 @@
         </div>
       </div>
     </script>
+
+    <input type="text" placeholder="Search..." data-bind="value: filter, valueUpdate: 'afterkeydown'" class="search" />
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
   	<script src="js/lib/jquery-1.11.3.min.js"></script>
   	<script src="js/lib/knockout-3.3.0.js"></script>
+    <script src="js/lib/ko.utils.js"></script>
   	<script src="js/model.js"></script> 
   	<script src="js/view.js"></script>  
     <script src="js/viewModel.js"></script> 

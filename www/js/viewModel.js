@@ -3,12 +3,12 @@ function viewModel(){
 	var self = this;
     self.points = ko.observableArray([]);
     //self.currentFilter = ko.observable;
-    self.filter = ko.observable();
+    self.filter = ko.observable("");
 
 	self.point = function(name, lat, long, content, img, webUrl, web) {
 		
 		var that = this;       //context-ception
-	    this.name = name;
+	    this.name = ko.observable(name);
 	    this.lat = ko.observable(lat);
 	    this.long = ko.observable(long);
 	    this.content = ko.observable(content);
@@ -62,7 +62,7 @@ function viewModel(){
 
     self.setFilter = function(){
     	console.log(filterPoints());
-    }
+    };
 
 	/*self.filter = function() {
 		var f = 'asd';
@@ -70,15 +70,31 @@ function viewModel(){
 	    self.currentFilter(f);
 	};*/
 
-    self.filterPoints = ko.computed(function(){
-        if(!self.filter()) {
+
+
+    self.filteredPoints = ko.computed(function(){
+    	var filter = self.filter().toLowerCase();
+        if(!filter){
             return this.points(); 
         } else {
             return ko.utils.arrayFilter(self.points(), function(point) {
-                return ko.utils.stringStartsWith(point.name().toLowerCase(), self.filter());
-                //return point.name == self.filter();
+            	//console.log(point.name());
+                return ko.utils.stringStartsWith(point.name().toLowerCase(), filter);
             });
         }
     });
 
+/*filteredPoints = ko.dependentObservable(function() {
+    var filter = this.filter().toLowerCase();
+    if (!filter) {
+        return this.points();
+    } else {
+        return ko.utils.arrayFilter(this.points(), function(point) {
+        	console.log(point());
+            return ko.utils.stringStartsWith(p.name().toLowerCase(), filter);
+        });
+    }
+}); */
+
 };
+
