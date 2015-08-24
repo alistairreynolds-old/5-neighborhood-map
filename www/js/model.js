@@ -1,5 +1,4 @@
 function Model() {
-	var self = this;
 
 	this.mapOptions = {
 		center: { lat: 51.7322551, lng: -2.232634},
@@ -11,7 +10,7 @@ function Model() {
 			{
 				'name': 'King\'s Head', 
 				'lat': '51.7558162', 
-				'lng':  '-2.2476957',
+				'lng': '-2.2476957',
 				'contentString': 
 					'The King\'s Head is a very traditional style pub with friendly staff, great food, cask ales, and a fantastic view.<br />' + 
 					'Possibly the best pub in Glouchestershire, <em>if</em> you can find it. It is very much Stroud\'s hidden gem',
@@ -22,7 +21,7 @@ function Model() {
 			{
 				'name': 'Stroud Train Station', 
 				'lat': '51.7445949', 
-				'lng':  '-2.2193167',
+				'lng': '-2.2193167',
 				'contentString': 
 					'Stroud railway station is a railway station that serves the town of Stroud in Gloucestershire, England.<br />' + 
 					'Stroud railway station was designed by Isambard Kingdom Brunel.',
@@ -33,7 +32,7 @@ function Model() {
 			{
 				'name': 'Stroud Farmer\'s Market', 
 				'lat': '51.7453619', 
-				'lng':  '-2.2162381',
+				'lng': '-2.2162381',
 				'contentString': 
 					'Stroud Farmers’ Market is multi award-winning and is well known as one of the biggest, busiest and most popular farmers\' market in the UK.<br />' + 
 					'The market was awarded Best Farmers\' Market in the UK for 2013 for a second time by FARMA.',
@@ -44,7 +43,7 @@ function Model() {
 			{
 				'name': 'South Mill House', 
 				'lat': '51.7322551', 
-				'lng':  '-2.232634',
+				'lng': '-2.232634',
 				'contentString': 
 					'This is my parent\'s home, where I live when I\'m in the UK.' + 
 					'It\'s a great cottage style house, built in the 1970s, and right next to an allotment',
@@ -55,7 +54,7 @@ function Model() {
 			{
 				'name': 'Stroud Congregational Church', 
 				'lat': '51.7451224', 
-				'lng':  '-2.2174341',
+				'lng': '-2.2174341',
 				'contentString': 
 					'There are <em>lots</em> of churches in stroud - this is one of them, showing lots of ecclesiastical church-nesses',
 				'img': 'http://i.imgur.com/FoZ5wn0.jpg',
@@ -65,5 +64,4 @@ function Model() {
 		]
 	};
 }
-
 var model = new Model();

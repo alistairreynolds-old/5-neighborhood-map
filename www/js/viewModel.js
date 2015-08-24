@@ -2,11 +2,12 @@ function viewModel(){
 
 	var self = this;
     self.points = ko.observableArray([]);
-    //self.currentFilter = ko.observable;
     self.filter = ko.observable("");
 
+    // Create a point of interest
 	self.point = function(name, lat, long, content, img, webUrl, web) {
 		
+		// Set properties of the object
 		var that = this;       //context-ception
 	    this.name = ko.observable(name);
 	    this.lat = ko.observable(lat);
@@ -17,18 +18,21 @@ function viewModel(){
 	    this.web = ko.observable(web);
 	    this.selected = ko.observable(false);
 
+	    // Create the google map marker
 	    this.marker = new google.maps.Marker({
 	        position: new google.maps.LatLng(lat, long),
 	        title: name,
 	        map: view.map
 	    });
 
+	    // Adding a click event which hides all points, then shows the currently selected one
 	    google.maps.event.addListener(this.marker, 'click', function() {
 	    	self.hidePoints();
 	    	that.selected(true);
 	    }.bind(self));
 	};
 
+	// Adds points of interest to the right side
     self.addPoints = function(){
 		for(i=0; i < model.mapLocations.locations.length; i++){
 			p = new self.point(
@@ -44,12 +48,14 @@ function viewModel(){
 		}
  	};
 
+ 	// Hides all points on the left
  	self.hidePoints = function(){
     	for(i=0; i < self.points().length; i++){
 			self.points()[i].selected(false);
 		}		
  	};
 
+ 	// Sets point of interest on the right
     self.setSelected = function(p){
  		self.hidePoints(); 
 		self.p.selected(true);
@@ -64,14 +70,7 @@ function viewModel(){
     	console.log(filterPoints());
     };
 
-	/*self.filter = function() {
-		var f = 'asd';
-		console.log(f);
-	    self.currentFilter(f);
-	};*/
-
-
-
+	// Filter through points. Credit http://jsfiddle.net/rniemeyer/vdcUA/
     self.filteredPoints = ko.computed(function(){
     	var filter = self.filter().toLowerCase();
         if(!filter){
@@ -83,18 +82,6 @@ function viewModel(){
             });
         }
     });
-
-/*filteredPoints = ko.dependentObservable(function() {
-    var filter = this.filter().toLowerCase();
-    if (!filter) {
-        return this.points();
-    } else {
-        return ko.utils.arrayFilter(this.points(), function(point) {
-        	console.log(point());
-            return ko.utils.stringStartsWith(p.name().toLowerCase(), filter);
-        });
-    }
-}); */
 
 };
 
