@@ -7,14 +7,19 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body>
-    <div id="map">Loading map. Please wait...</div>     
+    <!-- Initial loading map text to use to give feedback in case of slow/broken connection to google -->
+    <div id="map">Loading map. Please wait...</div>
+    <!-- POI KO list on the right -->
     <div id="points" data-bind="template: { name: 'pointsTmpl', foreach: filteredPoints }"></div>
     <script id="pointsTmpl" type="text/html">
+      <!-- Allowing to click on the H2 element to show a single element -->
       <h2 data-bind="text: name, click: setSelectedKO"></h2>         
+      <!-- Only show this if the current POI is selected -->
       <div data-bind="if: selected">
         <div id="info-content">
           <div data-bind="html: content"></div>
           <img width="90%" data-bind="attr: {src: img, alt: name}" />
+          <!-- Only show the web link if set -->
           <p data-bind="if: web">
               <a target="_blank" data-bind="attr: {href: webUrl, alt: web}"><span data-bind="text: web"></span></a>
           </p>

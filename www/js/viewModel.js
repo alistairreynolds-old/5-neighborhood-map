@@ -61,13 +61,10 @@ function viewModel(){
 		self.p.selected(true);
     };
 
+    // need a separate function for KO to use, so parameters don't need to be passed
     self.setSelectedKO = function(){
  		self.hidePoints(); 
 		this.selected(true);
-    };
-
-    self.setFilter = function(){
-    	console.log(filterPoints());
     };
 
 	// Filter through points. Credit http://jsfiddle.net/rniemeyer/vdcUA/
@@ -77,7 +74,6 @@ function viewModel(){
             return this.points(); 
         } else {
             return ko.utils.arrayFilter(self.points(), function(point) {
-            	//console.log(point.name());
                 return ko.utils.stringStartsWith(point.name().toLowerCase(), filter);
             });
         }
