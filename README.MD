@@ -10,10 +10,3 @@
 Run the index.html file
 Filter through the POI by entering the text into the Search text box
 Click on either a marker on the map or an item on the right to find out more about it
-
-- TODO -
-
-* Add streetview next to it showing same coords
-* If viewing portrait style, put map on top and streetview underneart
-* Pretty it up
-* Comment

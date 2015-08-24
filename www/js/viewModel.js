@@ -27,8 +27,18 @@ function viewModel(){
 
 	    // Adding a click event which hides all points, then shows the currently selected one
 	    google.maps.event.addListener(this.marker, 'click', function() {
-	    	self.hidePoints();
-	    	that.selected(true);
+	 		var isSelected = false;
+	 		if(that.selected()){
+				isSelected = true;
+			};
+
+	 		self.hidePoints(); 
+
+	 		if(isSelected){
+				that.selected(false);
+			}else{
+				that.selected(true);
+			};
 	    }.bind(self));
 	};
 
@@ -36,14 +46,14 @@ function viewModel(){
     self.addPoints = function(){
 		for(i=0; i < model.mapLocations.locations.length; i++){
 			p = new self.point(
-	    			model.mapLocations.locations[i].name,
-	    			model.mapLocations.locations[i].lat,
-	    			model.mapLocations.locations[i].lng,
-	    			model.mapLocations.locations[i].contentString,
-	    			model.mapLocations.locations[i].img,
-	    			model.mapLocations.locations[i].webUrl,
-	    			model.mapLocations.locations[i].webvi
-	    		)
+    			model.mapLocations.locations[i].name,
+    			model.mapLocations.locations[i].lat,
+    			model.mapLocations.locations[i].lng,
+    			model.mapLocations.locations[i].contentString,
+    			model.mapLocations.locations[i].img,
+    			model.mapLocations.locations[i].webUrl,
+    			model.mapLocations.locations[i].web
+	    	);
 			self.points.push(p);
 		}
  	};
@@ -55,16 +65,20 @@ function viewModel(){
 		}		
  	};
 
- 	// Sets point of interest on the right
-    self.setSelected = function(p){
- 		self.hidePoints(); 
-		self.p.selected(true);
-    };
-
-    // need a separate function for KO to use, so parameters don't need to be passed
+    // Hides all POI on right, then shows the selected one. Need a separate function for KO to use, so parameters don't need to be passed
     self.setSelectedKO = function(){
+ 		var isSelected = false;
+ 		if(this.selected()){
+			isSelected = true;
+		};
+
  		self.hidePoints(); 
-		this.selected(true);
+
+ 		if(isSelected){
+			this.selected(false);
+		}else{
+			this.selected(true);
+		};
     };
 
 	// Filter through points. Credit http://jsfiddle.net/rniemeyer/vdcUA/
