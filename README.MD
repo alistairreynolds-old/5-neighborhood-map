@@ -10,3 +10,7 @@
 Run the index.html file
 Filter through the POI by entering the text into the Search text box
 Click on either a marker on the map or an item on the right to find out more about it
+
+- TODO - 
+
+Filter through gmaps points

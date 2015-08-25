@@ -28,7 +28,7 @@
         </div>
       </div>
     </script>
-    <input type="text" placeholder="Search..." data-bind="value: filter, valueUpdate: 'afterkeydown'" class="search" />
+    <input type="text" placeholder="Search..." data-bind="value: filter, valueUpdate: 'afterkeydown', event: {keyup: filterMap}" class="search" />
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
   	<script src="js/lib/jquery-1.11.3.min.js"></script>
   	<script src="js/lib/knockout-3.3.0.js"></script>

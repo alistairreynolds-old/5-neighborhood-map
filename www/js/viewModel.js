@@ -17,6 +17,7 @@ function viewModel(){
 	    this.webUrl = ko.observable(webUrl);
 	    this.web = ko.observable(web);
 	    this.selected = ko.observable(false);
+	    this.isVisible = ko.observable(false);
 
 	    // Create the google map marker
 	    this.marker = new google.maps.Marker({
@@ -40,6 +41,18 @@ function viewModel(){
 				that.selected(true);
 			};
 	    }.bind(self));
+
+	    // Hiding/showing functionality for search filter
+		this.isVisible.subscribe(function(currentState) {
+			if (currentState) {
+				that.marker.setMap(view.map);
+			} else {
+				that.marker.setMap(null);
+			}
+		});
+
+		this.isVisible(true);
+
 	};
 
 	// Adds points of interest to the right side
@@ -81,7 +94,7 @@ function viewModel(){
 		};
     };
 
-	// Filter through points. Credit http://jsfiddle.net/rniemeyer/vdcUA/
+	// Filter through points on the right/bottom. Credit http://jsfiddle.net/rniemeyer/vdcUA/
     self.filteredPoints = ko.computed(function(){
     	var filter = self.filter().toLowerCase();
         if(!filter){
@@ -92,6 +105,16 @@ function viewModel(){
             });
         }
     });
+
+    // Filters through the points on the map. Credit http://stackoverflow.com/questions/29557938/removing-map-pin-with-search
+    self.filterMap = function(){
+	    var filter  = self.filter().toLowerCase();
+    	return ko.utils.arrayFilter(self.points(), function (point) {
+        	var doesMatch = ko.utils.stringStartsWith(point.name().toLowerCase(), filter);
+        	point.isVisible(doesMatch);
+        	return doesMatch;
+    	}); 
+    };
 
 };
 
