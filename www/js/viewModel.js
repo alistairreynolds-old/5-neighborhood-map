@@ -19,15 +19,32 @@ function viewModel(){
 	    this.selected = ko.observable(false);
 	    this.isVisible = ko.observable(false);
 
+		this.infowindow = new google.maps.InfoWindow({
+			content: this.content()
+		});
+
 	    // Create the google map marker
 	    this.marker = new google.maps.Marker({
 	        position: new google.maps.LatLng(lat, long),
 	        title: name,
-	        map: view.map
+	        map: view.map,
+	        animation: google.maps.Animation.DROP,
+
+	        // Unanimate all points, then animate this one
+	        toggleActive: function(){
+	        	for(i = 0; i < self.points().length; i++){
+	        		points()[i].marker.setAnimation(null);
+	        		points()[i].infowindow.close();
+	        	};
+		    	this.setAnimation(google.maps.Animation.BOUNCE);
+		    	that.infowindow.open(view.map, that.marker);
+	        },
+
 	    });
 
 	    // Adding a click event which hides all points, then shows the currently selected one
-	    google.maps.event.addListener(this.marker, 'click', function() {
+	    google.maps.event.addListener(this.marker, 'click', function() {   	
+	    	that.marker.toggleActive();
 	 		var isSelected = false;
 	 		if(that.selected()){
 				isSelected = true;
@@ -80,6 +97,7 @@ function viewModel(){
 
     // Hides all POI on right, then shows the selected one. Need a separate function for KO to use, so parameters don't need to be passed
     self.setSelectedKO = function(){
+		this.marker.toggleActive();    	
  		var isSelected = false;
  		if(this.selected()){
 			isSelected = true;

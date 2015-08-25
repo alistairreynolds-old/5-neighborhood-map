@@ -4,8 +4,16 @@
 		"selected_items":
 		[
 			[
+				"filter",
+				"filterPoints"
+			],
+			[
+				"font",
+				"font-family"
+			],
+			[
 				"obser",
-				"observableArray"
+				"observable"
 			],
 			[
 				"getC",
@@ -71,17 +79,103 @@
 			"file": "www/index.html",
 			"settings":
 			{
-				"buffer_size": 0,
-				"line_ending": "Windows"
+				"buffer_size": 2016,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/js/viewModel.js",
+			"settings":
+			{
+				"buffer_size": 3433,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/css/dt-style.css",
+			"settings":
+			{
+				"buffer_size": 59,
+				"line_ending": "Unix",
+				"name": "dt-style."
+			}
+		},
+		{
+			"file": "www/css/mob-style.css",
+			"settings":
+			{
+				"buffer_size": 51,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/css/style.css",
+			"settings":
+			{
+				"buffer_size": 567,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/js/lib/ko.utils.js",
+			"settings":
+			{
+				"buffer_size": 229,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/js/app.js",
+			"settings":
+			{
+				"buffer_size": 63,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/js/view.js",
+			"settings":
+			{
+				"buffer_size": 690,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/js/model.js",
+			"settings":
+			{
+				"buffer_size": 2576,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "README.MD",
+			"settings":
+			{
+				"buffer_size": 1039,
+				"line_ending": "Unix"
 			}
 		}
 	],
 	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
 	"command_palette":
 	{
-		"height": 81.0,
+		"height": 392.0,
+		"last_filter": "asc",
 		"selected_items":
 		[
+			[
+				"asc",
+				"ASCII Decorator: Default Font"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
 			[
 				"install p",
 				"Package Control: Advanced Install Package"
@@ -97,10 +191,6 @@
 			[
 				"instal",
 				"Package Control: Install Package"
-			],
-			[
-				"asc",
-				"ASCII Decorator: Default Font"
 			],
 			[
 				"comment",
@@ -125,10 +215,6 @@
 			[
 				"insta",
 				"Package Control: Install Package"
-			],
-			[
-				"install",
-				"Package Control: Advanced Install Package"
 			],
 			[
 				"form",
@@ -219,11 +305,15 @@
 				"Package Control: Enable Package"
 			]
 		],
-		"width": 512.0
+		"width": 575.0
 	},
 	"console":
 	{
-		"height": 125.0
+		"height": 125.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
 	},
 	"distraction_free":
 	{
@@ -234,8 +324,18 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/Users/Alistair/Documents/git/udacity/web-dev/5-neighborhood-map",
+		"/Users/Alistair/Documents/git/udacity/web-dev/5-neighborhood-map/www",
+		"/Users/Alistair/Documents/git/udacity/web-dev/5-neighborhood-map/www/css",
+		"/Users/Alistair/Documents/git/udacity/web-dev/5-neighborhood-map/www/js"
+	],
 	"file_history":
 	[
+		"/Users/Alistair/Documents/git/udacity/web-dev/5-neighborhood-map/www/js/lib/knockout-3.3.0.js",
+		"/Users/Alistair/Documents/git/udacity/web-dev/5-neighborhood-map/www/js/app.js",
+		"/Users/Alistair/Documents/git/udacity/web-dev/5-neighborhood-map/www/js/view.js",
 		"/E/Documents/Udacity/Front-end-web-dev/lessons/ud989-todo-app/bower.json",
 		"/E/Documents/Udacity/Front-end-web-dev/lessons/ud989-todo-app/js/app.js",
 		"/E/Documents/Udacity/Front-end-web-dev/lessons/ud989-todo-app/bower_components/todomvc-common/base.css",
@@ -349,7 +449,7 @@
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -363,6 +463,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"var ",
+			");   	",
+			"}\n",
 			"destroy",
 			"change",
 			"completed",
@@ -414,6 +517,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"this.",
 			"\"",
 			"MAX_MAX_SPEED",
 			"MAX_MIN_SPEED",
@@ -446,15 +550,189 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
 					"file": "www/index.html",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 2016,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1587,
+								1587
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "www/js/viewModel.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3433,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3110,
+								3110
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 972.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "www/css/dt-style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 59,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								56,
+								56
+							]
+						],
+						"settings":
+						{
+							"auto_name": "dt-style.",
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "www/css/mob-style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 51,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8,
+								8
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "www/css/style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 567,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								470,
+								470
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "www/js/lib/ko.utils.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 229,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								228,
+								228
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "www/js/app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 63,
 						"regions":
 						{
 						},
@@ -467,12 +745,99 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "www/js/view.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 690,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								66,
+								66
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "www/js/model.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2576,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								212,
+								212
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 4.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "README.MD",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1039,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1039,
+								1039
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
@@ -509,14 +874,25 @@
 		]
 	},
 	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 100.0
+	},
+	"pinned_build_system": "",
+	"project": "5-neighborhood-map.sublime-project",
 	"replace":
 	{
-		"height": 62.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":
 	{
 		"height": 0.0,
+		"last_filter": "",
 		"selected_items":
 		[
 		],
@@ -525,15 +901,32 @@
 	"select_project":
 	{
 		"height": 500.0,
+		"last_filter": "",
 		"selected_items":
 		[
 		],
 		"width": 380.0
 	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 169.0,
-	"status_bar_visible": true
+	"side_bar_width": 220.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
 }
