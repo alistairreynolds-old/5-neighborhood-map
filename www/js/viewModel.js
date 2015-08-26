@@ -19,10 +19,6 @@ function viewModel(){
 	    this.selected = ko.observable(false);
 	    this.isVisible = ko.observable(false);
 
-		this.infowindow = new google.maps.InfoWindow({
-			content: this.content()
-		});
-
 	    // Create the google map marker
 	    this.marker = new google.maps.Marker({
 	        position: new google.maps.LatLng(lat, long),
@@ -30,16 +26,19 @@ function viewModel(){
 	        map: view.map,
 	        animation: google.maps.Animation.DROP,
 
+			infowindow: new google.maps.InfoWindow({
+				content: this.content()
+			}),	      
+
 	        // Unanimate all points, then animate this one
 	        toggleActive: function(){
 	        	for(i = 0; i < self.points().length; i++){
 	        		points()[i].marker.setAnimation(null);
-	        		points()[i].infowindow.close();
+	        		points()[i].marker.infowindow.close(view.map);
 	        	};
 		    	this.setAnimation(google.maps.Animation.BOUNCE);
-		    	that.infowindow.open(view.map, that.marker);
+		    	this.infowindow.open(view.map, that.marker);
 	        },
-
 	    });
 
 	    // Adding a click event which hides all points, then shows the currently selected one
@@ -53,8 +52,10 @@ function viewModel(){
 	 		self.hidePoints(); 
 
 	 		if(isSelected){
+	 			that.isSelected();
 				that.selected(false);
 			}else{
+				that.isSelected();
 				that.selected(true);
 			};
 	    }.bind(self));
