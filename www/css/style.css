@@ -1,8 +1,11 @@
-html, body, #map{
+html, 
+body, 
+#map{
 	height: 100%;
-	margin: 0px; 
+	margin: 0; 
 	font-family: "Helvetica", "Verdana", sans-serif;
 }
+
 h2{
 	cursor: pointer;
 	background: #000055;
@@ -13,22 +16,27 @@ h2{
 	margin: 0;
 	font-size: 16px;
 }
+
 .info-content img{
 	padding-top: 10px;
 }
+
 .info-content{
 	margin: 10px;
 	height:100%;
 }
+
 input.search{
 	position: fixed;
 	top: 20px;
 	left: 90px;
 	font-size: 14px;
 }
+
 .info-shell{
 	overflow-y: scroll;
 }
+
 #points{
 	position: fixed;
 	right: 0;

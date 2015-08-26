@@ -1,4 +1,5 @@
 var View = function(){
+	'use strict';
 	// Load map and set the options from model
 	this.mapOptions = model.mapOptions;
 	this.map = new google.maps.Map(document.getElementById('map'), {
@@ -14,6 +15,6 @@ var View = function(){
 		    }
 		}, 2000);   
 	};	
-}
+};
 
 var view = new View();
