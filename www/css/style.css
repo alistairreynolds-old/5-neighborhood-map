@@ -13,10 +13,10 @@ h2{
 	margin: 0;
 	font-size: 16px;
 }
-#info-content img{
+.info-content img{
 	padding-top: 10px;
 }
-#info-content{
+.info-content{
 	margin: 10px;
 	height:100%;
 }
@@ -26,7 +26,7 @@ input.search{
 	left: 90px;
 	font-size: 14px;
 }
-#info-shell{
+.info-shell{
 	overflow-y: scroll;
 }
 #points{

@@ -17,8 +17,8 @@
       <!-- Allowing to click on the H2 element to show a single element -->
       <h2 data-bind="text: name, click: setSelectedKO"></h2>         
       <!-- Only show this if the current POI is selected -->
-      <div data-bind="if: selected" id="info-shell">
-        <div id="info-content">
+      <div data-bind="if: selected" class="info-shell">
+        <div class="info-content">
           <div data-bind="html: content"></div>
           <img width="90%" data-bind="attr: {src: img, alt: name}" />
           <!-- Only show the web link if set -->
@@ -28,6 +28,7 @@
         </div>
       </div>
     </script>
+    
     <input type="text" placeholder="Search..." data-bind="value: filter, valueUpdate: 'afterkeydown', event: {keyup: filterMap}" class="search" />
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
   	<script src="js/lib/jquery-1.11.3.min.js"></script>
