@@ -16,7 +16,8 @@ function Model() {
 					'Possibly the best pub in Glouchestershire, <em>if</em> you can find it. It is very much Stroud\'s hidden gem',
 				'img': 'http://www.pubsgalore.co.uk/images/display/12501_13000/12815_35fc1505.jpg',
 				'webUrl': 'https://www.facebook.com/pages/The-Kings-Head/161432770539038',
-				'web': 'The King\'s Head Facebook'
+				'web': 'The King\'s Head Facebook',
+				'wiki': 'Public Houses'
 			},			
 			{
 				'name': 'Stroud Train Station', 
@@ -27,7 +28,8 @@ function Model() {
 					'Stroud railway station was designed by Isambard Kingdom Brunel.',
 				'img': 'http://www.nationalrail.co.uk/static/images/content/Stroud_Email_Ian_Chirnside_resized.jpg',
 				'webUrl': 'http://www.nationalrail.co.uk/stations/std/details.aspx',
-				'web': 'Stroud Train Station website'
+				'web': 'Stroud Train Station website',
+				'wiki': 'Stroud railway station'
 			},					
 			{
 				'name': 'Stroud Farmer\'s Market', 
@@ -38,7 +40,8 @@ function Model() {
 					'The market was awarded Best Farmers\' Market in the UK for 2013 for a second time by FARMA.',
 				'img': 'http://79.170.44.140/fresh-n-local.co.uk/wp-content/uploads/2014/10/stroud-farmers-market-insert1.jpg',
 				'webUrl': 'http://fresh-n-local.co.uk/trader/stroud',
-				'web': 'Stroud Farmer\'s Market website'
+				'web': 'Stroud Farmer\'s Market website',
+				'wiki': 'Farmers\' Market'
 			},
 			{
 				'name': 'South Mill House', 
@@ -59,7 +62,8 @@ function Model() {
 					'There are <em>lots</em> of churches in stroud - this is one of them, showing lots of ecclesiastical church-nesses',
 				'img': 'http://i.imgur.com/FoZ5wn0.jpg',
 				'webUrl': '',
-				'web' : ''
+				'web' : '',
+				'wiki': 'Congregational church'
 			},
 		]
 	};

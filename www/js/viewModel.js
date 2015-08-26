@@ -5,10 +5,12 @@ function viewModel(){
     self.filter = ko.observable("");
 
     // Create a point of interest
-	self.point = function(name, lat, long, content, img, webUrl, web) {
+	self.point = function(name, lat, long, content, img, webUrl, web, wiki) {
 		
 		// Set properties of the object
 		var that = this;       //context-ception
+
+		// Model data
 	    this.name = ko.observable(name);
 	    this.lat = ko.observable(lat);
 	    this.long = ko.observable(long);
@@ -16,8 +18,33 @@ function viewModel(){
 	    this.img = ko.observable(img);
 	    this.webUrl = ko.observable(webUrl);
 	    this.web = ko.observable(web);
+	    this.wiki = ko.observable(wiki);
+
 	    this.selected = ko.observable(false);
 	    this.isVisible = ko.observable(false);
+	    this.wikiTitle = ko.observable("");
+	    this.wikiBody = ko.observable("");
+
+	    // Get wikipedia entry based on the object's wiki property
+	    this.wikiData = ko.computed(function(){
+	    	if(that.wiki()){
+	 			$.ajax({
+			    	url: "https://en.wikipedia.org/w/api.php?action=opensearch&search=" + that.wiki() + "&callback=wikiCallBack&format=json",
+				    dataType: 'jsonp'
+			    })
+			    .complete(function(data){
+			    	console.log(data.responseJSON);
+			        that.wikiTitle = data.responseJSON[0];
+			        that.wikiLink = data.responseJSON[3][0];
+			        that.wikiBody = data.responseJSON[2];
+			    })
+			    .error(function(){
+			    	return 'Wikipedia entries could not be loaded';
+			    });
+			}
+	    });
+
+	    
 
 	    // Create the google map marker
 	    this.marker = new google.maps.Marker({
@@ -69,7 +96,8 @@ function viewModel(){
     			model.mapLocations.locations[i].contentString,
     			model.mapLocations.locations[i].img,
     			model.mapLocations.locations[i].webUrl,
-    			model.mapLocations.locations[i].web
+    			model.mapLocations.locations[i].web,
+    			model.mapLocations.locations[i].wiki
 	    	);
 			self.points.push(p);
 		}
@@ -82,8 +110,9 @@ function viewModel(){
 		}		
  	};
 
-    // Hides all POI on right, then shows the selected one. Need a separate function for KO to use, so parameters don't need to be passed
+    // Hides all POI on right, then shows the selected one
     self.setSelected = function(point){
+    	// This allows both the KO observable (menu on right) and the maps pointer to use the same function
     	if(typeof point === undefined){
     		point = this;
     	};
