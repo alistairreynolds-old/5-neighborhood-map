@@ -15,7 +15,7 @@
     <div id="points" data-bind="template: { name: 'pointsTmpl', foreach: filteredPoints }"></div>
     <script id="pointsTmpl" type="text/html">
       <!-- Allowing to click on the H2 element to show a single element -->
-      <h2 data-bind="text: name, click: setSelectedKO"></h2>         
+      <h2 data-bind="text: name, click: setSelected"></h2>         
       <!-- Only show this if the current POI is selected -->
       <div data-bind="if: selected" class="info-shell">
         <div class="info-content">
@@ -28,7 +28,7 @@
         </div>
       </div>
     </script>
-    
+
     <input type="text" placeholder="Search..." data-bind="value: filter, valueUpdate: 'afterkeydown', event: {keyup: filterMap}" class="search" />
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
   	<script src="js/lib/jquery-1.11.3.min.js"></script>

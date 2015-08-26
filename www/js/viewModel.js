@@ -43,18 +43,7 @@ function viewModel(){
 
 	    // Adding a click event which hides all points, then shows the currently selected one
 	    google.maps.event.addListener(this.marker, 'click', function() {   	
-	    	that.marker.toggleActive();
-	 		if(that.selected()){
-				isSelected = true;
-			};
-
-	 		self.hidePoints(); 
-
-	 		if(that.selected()){
-				that.selected(false);
-			}else{
-				that.selected(true);
-			};
+	    	self.setSelected(that);
 	    }.bind(self));
 
 	    // Hiding/showing functionality for search filter
@@ -94,19 +83,22 @@ function viewModel(){
  	};
 
     // Hides all POI on right, then shows the selected one. Need a separate function for KO to use, so parameters don't need to be passed
-    self.setSelectedKO = function(){
-		this.marker.toggleActive();    	
+    self.setSelected = function(point){
+    	if(typeof point === undefined){
+    		point = this;
+    	};
+		point.marker.toggleActive();    	
  		var isSelected = false;
- 		if(this.selected()){
+ 		if(point.selected()){
 			isSelected = true;
 		};
 
  		self.hidePoints(); 
 
  		if(isSelected){
-			this.selected(false);
+			point.selected(false);
 		}else{
-			this.selected(true);
+			point.selected(true);
 		};
     };
 
