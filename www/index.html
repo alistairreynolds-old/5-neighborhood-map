@@ -25,8 +25,11 @@
           <p data-bind="if: web">
               <a target="_blank" data-bind="attr: {href: webUrl, alt: web}"><span data-bind="text: web"></span></a>
           </p>
-          <a target="_blank" data-bind="attr: {href: wikiLink}" alt="Wikipedia link" href=""><h4 data-bind="text: wikiTitle"></h4></a>
-          <div data-bind="text: wikiBody"></div>
+            <div data-bind="if: wikiTitle">
+            <h4>Wikipedia Entry on &ldquo;<span data-bind="text: wiki"></span>&rdquo;</h4>
+            <a target="_blank" data-bind="attr: {href: wikiLink}" alt="Wikipedia link" href=""><h5 data-bind="text: wikiTitle"></h5></a>
+            <div data-bind="html: wikiBody"></div>
+          </div>
         </div>
       </div>
     </script>

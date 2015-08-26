@@ -33,18 +33,15 @@ function viewModel(){
 				    dataType: 'jsonp'
 			    })
 			    .complete(function(data){
-			    	console.log(data.responseJSON);
 			        that.wikiTitle = data.responseJSON[0];
 			        that.wikiLink = data.responseJSON[3][0];
-			        that.wikiBody = data.responseJSON[2];
+			        that.wikiBody = data.responseJSON[2][0];
 			    })
 			    .error(function(){
 			    	return 'Wikipedia entries could not be loaded';
 			    });
 			}
 	    });
-
-	    
 
 	    // Create the google map marker
 	    this.marker = new google.maps.Marker({

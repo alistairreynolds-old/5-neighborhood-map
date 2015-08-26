@@ -17,7 +17,7 @@ function Model() {
 				'img': 'http://www.pubsgalore.co.uk/images/display/12501_13000/12815_35fc1505.jpg',
 				'webUrl': 'https://www.facebook.com/pages/The-Kings-Head/161432770539038',
 				'web': 'The King\'s Head Facebook',
-				'wiki': 'Public Houses'
+				'wiki': 'Pub'
 			},			
 			{
 				'name': 'Stroud Train Station', 
