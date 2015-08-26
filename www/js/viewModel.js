@@ -44,18 +44,15 @@ function viewModel(){
 	    // Adding a click event which hides all points, then shows the currently selected one
 	    google.maps.event.addListener(this.marker, 'click', function() {   	
 	    	that.marker.toggleActive();
-	 		var isSelected = false;
 	 		if(that.selected()){
 				isSelected = true;
 			};
 
 	 		self.hidePoints(); 
 
-	 		if(isSelected){
-	 			that.isSelected();
+	 		if(that.selected()){
 				that.selected(false);
 			}else{
-				that.isSelected();
 				that.selected(true);
 			};
 	    }.bind(self));
